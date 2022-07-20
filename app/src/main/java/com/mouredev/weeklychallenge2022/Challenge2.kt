@@ -21,17 +21,20 @@ import java.math.BigInteger
  *
  */
 
-fun main() {
 
-    var n0: Long = 0
-    var n1: Long = 1
+val numberElements: Int = 50
 
-    (1..50).forEach { _ ->
+fun main(){
+    for(i in 0..(numberElements-1)){
+        println("Elemento ${i+1} : Número ${fibonacci(i.toLong())}")
+    }
+}
 
-        println(n0)
+fun fibonacci(n:Long):Long{
 
-        val fib = n0 + n1
-        n0 = n1
-        n1 = fib
+    return if(n < 2) {
+        n
+    } else {
+        (fibonacci(n - 1) + fibonacci(n - 2))
     }
 }
