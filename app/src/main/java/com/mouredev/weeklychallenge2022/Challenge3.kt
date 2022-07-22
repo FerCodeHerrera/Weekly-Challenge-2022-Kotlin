@@ -19,28 +19,30 @@ package com.mouredev.weeklychallenge2022
  */
 
 fun main() {
-
-    (1..100).forEach { number ->
-        if (isPrime(number)) {
-            println(number)
-        }
+    for(number in 1..100 )
+    {
+        print(primeNumber(number))
     }
 }
 
-private fun isPrime(number: Int): Boolean {
+fun primeNumber(number:Int):String{
 
-    if (number < 2) {
-        return false
-    }
+    var i:Int = 0
 
-    for (i in 2 until number) {
-        if (number % i == 0) {
-            return false
+    if(number == 0)
+        return "\nValor no válido, ingrese un número entre 1 y 100."
+
+    for (opeDiv in 1..number)
+    {
+        if(number%opeDiv == 0) {
+            i++
+        }
+
+        if (i > 2) {
+            return ""
         }
     }
-
-    return true
+    return "\n$number"
 }
-
 
 
